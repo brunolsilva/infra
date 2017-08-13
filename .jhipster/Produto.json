@@ -1,0 +1,28 @@
+{
+    "fluentMethods": true,
+    "relationships": [],
+    "fields": [
+        {
+            "fieldName": "produto",
+            "fieldType": "Integer",
+            "fieldValidateRules": [
+                "required",
+                "max"
+            ],
+            "fieldValidateRulesMax": 9999
+        },
+        {
+            "fieldName": "liberaSublimite",
+            "fieldType": "SimNaoEnum",
+            "fieldValues": "SIM,NAO",
+            "fieldValidateRules": [
+                "required"
+            ]
+        }
+    ],
+    "changelogDate": "20170813134949",
+    "entityTableName": "produto",
+    "dto": "no",
+    "pagination": "pagination",
+    "service": "serviceClass"
+}

@@ -1,0 +1,37 @@
+
+<div *ngIf="produtoCobertura">
+    <h2><span jhiTranslate="infraApp.produtoCobertura.detail.title">Produto Cobertura</span> {{produtoCobertura.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="infraApp.produtoCobertura.cobertura">Cobertura</span></dt>
+        <dd>
+            <span>{{produtoCobertura.cobertura}}</span>
+        </dd>
+        <dt><span jhiTranslate="infraApp.produtoCobertura.produto">Produto</span></dt>
+        <dd>
+            <span>{{produtoCobertura.produto}}</span>
+        </dd>
+        <dt><span jhiTranslate="infraApp.produtoCobertura.dataInicioVigencia">Data Inicio Vigencia</span></dt>
+        <dd>
+            <span>{{produtoCobertura.dataInicioVigencia | date:'mediumDate'}}</span>
+        </dd>
+        <dt><span jhiTranslate="infraApp.produtoCobertura.dataFimVigencia">Data Fim Vigencia</span></dt>
+        <dd>
+            <span>{{produtoCobertura.dataFimVigencia | date:'mediumDate'}}</span>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'produto-cobertura/'+ produtoCobertura.id + '/edit'} }]"
+            replaceUrl="true"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+    </button>
+</div>

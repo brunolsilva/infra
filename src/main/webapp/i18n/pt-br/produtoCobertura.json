@@ -1,0 +1,24 @@
+{
+    "infraApp": {
+        "produtoCobertura" : {
+            "home": {
+                "title": "Produto Coberturas",
+                "createLabel": "Criar novo Produto Cobertura",
+                "createOrEditLabel": "Criar ou editar Produto Cobertura"
+            },
+            "created": "Um novo Produto Cobertura foi criado com o identificador {{ param }}",
+            "updated": "Um Produto Cobertura foi atualizado com o identificador {{ param }}",
+            "deleted": "Um Produto Cobertura foi deletado com o identificador {{ param }}",
+            "delete": {
+                "question": "Tem certeza de que deseja excluir Produto Cobertura {{ id }}?"
+            },
+            "detail": {
+                "title": "Produto Cobertura"
+            },
+            "cobertura": "Cobertura",
+            "produto": "Produto",
+            "dataInicioVigencia": "Data Inicio Vigencia",
+            "dataFimVigencia": "Data Fim Vigencia"
+        }
+    }
+}

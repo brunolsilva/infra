@@ -1,0 +1,21 @@
+entity Produto {
+    produto Integer required max(9999)
+    liberaSublimite SimNaoEnum required
+}
+
+entity ProdutoCobertura {
+	cobertura Integer required max(9999)
+    produto Integer required max(9999)
+    dataInicioVigencia LocalDate required
+    dataFimVigencia LocalDate
+}
+
+enum SimNaoEnum {
+    SIM, NAO
+}
+
+// Set service options to all except few
+service all with serviceClass
+
+paginate Produto with pagination
+paginate ProdutoCobertura with pager

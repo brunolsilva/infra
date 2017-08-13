@@ -1,0 +1,40 @@
+{
+    "fluentMethods": true,
+    "relationships": [],
+    "fields": [
+        {
+            "fieldName": "cobertura",
+            "fieldType": "Integer",
+            "fieldValidateRules": [
+                "required",
+                "max"
+            ],
+            "fieldValidateRulesMax": 9999
+        },
+        {
+            "fieldName": "produto",
+            "fieldType": "Integer",
+            "fieldValidateRules": [
+                "required",
+                "max"
+            ],
+            "fieldValidateRulesMax": 9999
+        },
+        {
+            "fieldName": "dataInicioVigencia",
+            "fieldType": "LocalDate",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "dataFimVigencia",
+            "fieldType": "LocalDate"
+        }
+    ],
+    "changelogDate": "20170813134950",
+    "entityTableName": "produto_cobertura",
+    "dto": "no",
+    "pagination": "pager",
+    "service": "serviceClass"
+}

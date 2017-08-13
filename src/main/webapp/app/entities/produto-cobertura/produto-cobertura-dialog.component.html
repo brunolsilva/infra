@@ -1,0 +1,89 @@
+<form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+
+    <div class="modal-header">
+        <h4 class="modal-title" id="myProdutoCoberturaLabel" jhiTranslate="infraApp.produtoCobertura.home.createOrEditLabel">Create or edit a Produto Cobertura</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                (click)="clear()">&times;</button>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" [hidden]="!produtoCobertura.id">
+            <label for="id" jhiTranslate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                   [(ngModel)]="produtoCobertura.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="infraApp.produtoCobertura.cobertura" for="field_cobertura">Cobertura</label>
+            <input type="number" class="form-control" name="cobertura" id="field_cobertura"
+                [(ngModel)]="produtoCobertura.cobertura" required max="9999" />
+            <div [hidden]="!(editForm.controls.cobertura?.dirty && editForm.controls.cobertura?.invalid)">
+                <small class="form-text text-danger"
+                   [hidden]="!editForm.controls.cobertura?.errors?.required" jhiTranslate="entity.validation.required">
+                   This field is required.
+                </small>
+                <small class="form-text text-danger"
+                    [hidden]="!editForm.controls.cobertura?.errors?.max" jhiTranslate="entity.validation.max" translateValues="{ max: 9999 }">
+                    This field cannot be more than 9999.
+                </small>
+                <small class="form-text text-danger"
+                    [hidden]="!editForm.controls.cobertura?.errors?.number" jhiTranslate="entity.validation.number">
+                    This field should be a number.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="infraApp.produtoCobertura.produto" for="field_produto">Produto</label>
+            <input type="number" class="form-control" name="produto" id="field_produto"
+                [(ngModel)]="produtoCobertura.produto" required max="9999" />
+            <div [hidden]="!(editForm.controls.produto?.dirty && editForm.controls.produto?.invalid)">
+                <small class="form-text text-danger"
+                   [hidden]="!editForm.controls.produto?.errors?.required" jhiTranslate="entity.validation.required">
+                   This field is required.
+                </small>
+                <small class="form-text text-danger"
+                    [hidden]="!editForm.controls.produto?.errors?.max" jhiTranslate="entity.validation.max" translateValues="{ max: 9999 }">
+                    This field cannot be more than 9999.
+                </small>
+                <small class="form-text text-danger"
+                    [hidden]="!editForm.controls.produto?.errors?.number" jhiTranslate="entity.validation.number">
+                    This field should be a number.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="infraApp.produtoCobertura.dataInicioVigencia" for="field_dataInicioVigencia">Data Inicio Vigencia</label>
+            <div class="input-group">
+                <input id="field_dataInicioVigencia" type="text" class="form-control" name="dataInicioVigencia" ngbDatepicker  #dataInicioVigenciaDp="ngbDatepicker" [(ngModel)]="produtoCobertura.dataInicioVigencia"
+                required/>
+                <span class="input-group-btn">
+                    <button type="button" class="btn btn-default" (click)="dataInicioVigenciaDp.toggle()"><i class="fa fa-calendar"></i></button>
+                </span>
+            </div>
+            <div [hidden]="!(editForm.controls.dataInicioVigencia?.dirty && editForm.controls.dataInicioVigencia?.invalid)">
+                <small class="form-text text-danger"
+                   [hidden]="!editForm.controls.dataInicioVigencia?.errors?.required" jhiTranslate="entity.validation.required">
+                   This field is required.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="infraApp.produtoCobertura.dataFimVigencia" for="field_dataFimVigencia">Data Fim Vigencia</label>
+            <div class="input-group">
+                <input id="field_dataFimVigencia" type="text" class="form-control" name="dataFimVigencia" ngbDatepicker  #dataFimVigenciaDp="ngbDatepicker" [(ngModel)]="produtoCobertura.dataFimVigencia"
+                />
+                <span class="input-group-btn">
+                    <button type="button" class="btn btn-default" (click)="dataFimVigenciaDp.toggle()"><i class="fa fa-calendar"></i></button>
+                </span>
+            </div>
+        </div>
+
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" (click)="clear()">
+            <span class="fa fa-ban"></span>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+            <span class="fa fa-save"></span>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

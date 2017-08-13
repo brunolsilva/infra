@@ -1,0 +1,9 @@
+{
+    "infraApp": {
+        "SimNaoEnum" : {
+            "null": "",
+            "SIM": "SIM",
+            "NAO": "NAO"
+        }
+    }
+}
